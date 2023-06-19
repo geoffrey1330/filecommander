@@ -7,8 +7,21 @@ File Commander is a command-line tool for performing various file operations.
 To install File Commander, follow these steps:
 
 1. Make sure you have Go installed on your machine.
+
+```shell
+# Check Go version
+go version
+```
 2. Clone the repository or download the source code.
+
+```shell
+git clone https://github.com/geoffrey1330/file-commander.git
+```
 3. Navigate to the project directory.
+```shell
+cd file-commander
+```
+
 4. Run the following command to build the executable:
 
 ```shell
