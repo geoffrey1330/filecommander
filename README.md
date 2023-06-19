@@ -15,12 +15,12 @@ go version
 2. Clone the repository or download the source code.
 
 ```shell
-git clone https://github.com/geoffrey1330/file-commander.git
+git clone https://github.com/geoffrey1330/filecommander.git
 ```
 3. Navigate to the project directory.
 
 ```shell
-cd file-commander
+cd filecommander
 ```
 
 4. Run the following command to build the executable:
