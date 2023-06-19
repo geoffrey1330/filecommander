@@ -18,6 +18,7 @@ go version
 git clone https://github.com/geoffrey1330/file-commander.git
 ```
 3. Navigate to the project directory.
+
 ```shell
 cd file-commander
 ```
