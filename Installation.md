@@ -1,6 +1,6 @@
 To install the filecommander CLI tool to your system's PATH, you need to move the executable file to a directory that is included in the PATH environment variable. Here are the commands to do that for each operating system:
 
-## Windows:
+## Windows(powershell):
 
 ```shell
 # Download the ZIP file
