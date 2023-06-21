@@ -3,10 +3,35 @@ package main
 import (
 	"flag"
 	"fmt"
+	"os"
 )
 
 func main() {
+
+	flag.Usage = func() {
+		fmt.Fprintf(os.Stderr, "Usage: filecommander <command> <args>\n")
+		fmt.Fprintf(os.Stderr, "\nCommands:\n")
+		fmt.Fprintf(os.Stderr, "  create <filename>   Create a new file\n")
+		fmt.Fprintf(os.Stderr, "  read <filename>     Read the contents of a file\n")
+		fmt.Fprintf(os.Stderr, "  write <filename> <content>  Write content to a file\n")
+		fmt.Fprintf(os.Stderr, "  delete <filename>   Delete a file\n")
+		fmt.Fprintf(os.Stderr, "  list <directory>    List files in a directory\n")
+		fmt.Fprintf(os.Stderr, "  copy <srcfile> <destfile>   Copy a file to a new location\n")
+		fmt.Fprintf(os.Stderr, "  move <srcfile> <destfile>   Move a file to a new location\n")
+		fmt.Fprintf(os.Stderr, "  search <directory> <filename>   Search for a file in a directory\n")
+		fmt.Fprintf(os.Stderr, "\nOptions:\n")
+		flag.PrintDefaults()
+	}
+
+	// Define flags
+	help := flag.Bool("help", false, "Show help")
+
 	flag.Parse()
+
+	if *help {
+		flag.Usage()
+		return
+	}
 
 	args := flag.Args()
 	if len(args) < 1 {

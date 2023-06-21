@@ -8,6 +8,24 @@ import (
 )
 
 func createFile(filename string) {
+	if _, err := os.Stat(filename); err == nil {
+		// File exists, prompt user to overwrite
+		answer := ""
+		for answer != "y" && answer != "n" {
+			fmt.Print("File already exists. Do you want to overwrite it? (y/n): ")
+			_, err := fmt.Scanln(&answer)
+			if err != nil {
+				fmt.Println(err)
+				return
+			}
+		}
+
+		if answer == "n" {
+			return
+		}
+	}
+
+	// Create the file
 	file, err := os.Create(filename)
 	if err != nil {
 		fmt.Println("Error creating file:", err)
