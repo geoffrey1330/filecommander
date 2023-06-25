@@ -126,55 +126,44 @@ func moveFile(src, dest string) {
 }
 
 func openFile(filename string) error {
-	if err := verifyCodeCommand(); err != nil {
-		return err
-	}
-
 	var cmd *exec.Cmd
 
 	if runtime.GOOS == "windows" {
 		// On Windows, use "code.cmd"
 		cmd = exec.Command("code.cmd", filename)
+		cmd.Stdin = os.Stdin
+		cmd.Stdout = os.Stdout
+		cmd.Stderr = os.Stderr
+		err := cmd.Run()
+
+		if err != nil {
+			cmd = exec.Command("notepad", filename)
+			cmd.Stdin = os.Stdin
+			cmd.Stdout = os.Stdout
+			cmd.Stderr = os.Stderr
+			runErr := cmd.Run()
+
+			if runErr != nil {
+				fmt.Println(runErr)
+			}
+		}
+
 	} else {
-		cmd = exec.Command("code", filename)
+		// implement such that the default editor is opened
+		cmd = exec.Command("editor", filename)
+		cmd.Stdin = os.Stdin
+		cmd.Stdout = os.Stdout
+		cmd.Stderr = os.Stderr
+		runErr := cmd.Run()
+
+		if runErr != nil {
+			fmt.Println(runErr)
+		}
 	}
 
 	err := cmd.Start()
 	if err != nil {
 		return err
-	}
-
-	return nil
-}
-
-func verifyCodeCommand() error {
-	_, err := exec.LookPath("code")
-	if err != nil {
-		fmt.Println("code command not found. Attempting to install...")
-		err = installCodeCommand()
-		if err != nil {
-			return fmt.Errorf("failed to verify and install code command: %s", err)
-		}
-		fmt.Println("code command installed successfully.")
-	}
-	return nil
-}
-
-func installCodeCommand() error {
-	var command string
-	var args []string
-	if runtime.GOOS == "windows" {
-		command = "powershell"
-		args = []string{"-Command", "& { Invoke-WebRequest -Uri 'https://go.microsoft.com/fwlink/?LinkID=760868' -OutFile 'vscode.zip' }"}
-	} else {
-		command = "bash"
-		args = []string{"-c", "curl -o vscode.zip -L https://go.microsoft.com/fwlink/?LinkID=760868 && unzip vscode.zip && sudo mv 'VSCode.app' '/usr/local/bin/code'"}
-	}
-
-	cmd := exec.Command(command, args...)
-	err := cmd.Run()
-	if err != nil {
-		return fmt.Errorf("failed to install code command: %s", err)
 	}
 
 	return nil
