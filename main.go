@@ -19,6 +19,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "  copy <srcfile> <destfile>   Copy a file to a new location\n")
 		fmt.Fprintf(os.Stderr, "  move <srcfile> <destfile>   Move a file to a new location\n")
 		fmt.Fprintf(os.Stderr, "  search <directory> <filename>   Search for a file in a directory\n")
+		fmt.Fprintf(os.Stderr, "  open <filename>     Open a file in the default editor\n")
 		fmt.Fprintf(os.Stderr, "\nOptions:\n")
 		flag.PrintDefaults()
 	}
@@ -89,6 +90,12 @@ func main() {
 			return
 		}
 		searchFiles(args[1], args[2])
+	case "open":
+		if len(args) < 2 {
+			fmt.Println("Usage: filecommander open <filename>")
+			return
+		}
+		openFile(args[1])
 	default:
 		fmt.Println("Invalid command:", command)
 	}
