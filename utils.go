@@ -131,16 +131,12 @@ func openFile(filename string) error {
 	if runtime.GOOS == "windows" {
 		// On Windows, use "code.cmd"
 		cmd = exec.Command("code.cmd", filename)
-		cmd.Stdin = os.Stdin
-		cmd.Stdout = os.Stdout
-		cmd.Stderr = os.Stderr
+		handleCmdOs(cmd)
 		err := cmd.Run()
 
 		if err != nil {
 			cmd = exec.Command("notepad", filename)
-			cmd.Stdin = os.Stdin
-			cmd.Stdout = os.Stdout
-			cmd.Stderr = os.Stderr
+			handleCmdOs(cmd)
 			runErr := cmd.Run()
 
 			if runErr != nil {
@@ -151,9 +147,7 @@ func openFile(filename string) error {
 	} else {
 		// implement such that the default editor is opened
 		cmd = exec.Command("editor", filename)
-		cmd.Stdin = os.Stdin
-		cmd.Stdout = os.Stdout
-		cmd.Stderr = os.Stderr
+		handleCmdOs(cmd)
 		runErr := cmd.Run()
 
 		if runErr != nil {
@@ -167,4 +161,10 @@ func openFile(filename string) error {
 	}
 
 	return nil
+}
+
+func handleCmdOs(cmd *exec.Cmd) {
+	cmd.Stdin = os.Stdin
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
 }
