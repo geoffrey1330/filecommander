@@ -20,7 +20,7 @@ Move-Item -Path filecommander\filecommander.exe -Destination C:\Windows\System32
 wget https://github.com/geoffrey1330/filecommander/releases/download/v0.1.6/filecommander_Linux_x86_64
 
 # Move the filecommander executable to a directory in PATH (e.g., /usr/local/bin)
-sudo mv filecommander/filecommander /usr/local/bin
+sudo mv filecommander /usr/local/bin
 ```
 
 ## macOS:
@@ -32,7 +32,7 @@ sudo mv filecommander/filecommander /usr/local/bin
 wget https://github.com/geoffrey1330/filecommander/releases/download/v0.1.6/filecommander_Darwin_arm64
 
 # Move the filecommander executable to a directory in PATH (e.g., /usr/local/bin)
-sudo mv filecommander/filecommander /usr/local/bin
+sudo mv filecommander /usr/local/bin
 ```
 
 #### For Intel-based Macs:
@@ -42,5 +42,5 @@ sudo mv filecommander/filecommander /usr/local/bin
 wget https://github.com/geoffrey1330/filecommander/releases/download/v0.1.6/filecommander_Darwin_x86_64
 
 # Move the filecommander executable to a directory in PATH (e.g., /usr/local/bin)
-sudo mv filecommander/filecommander /usr/local/bin
+sudo mv filecommander /usr/local/bin
 ```
