@@ -4,7 +4,7 @@ To install the filecommander CLI tool to your system's PATH, you need to move th
 
 ```shell
 # Download the ZIP file
-curl -LOk https://github.com/geoffrey1330/filecommander/releases/download/v0.1.1/filecommander_Windows_x86_64.zip
+curl -LOk https://github.com/geoffrey1330/filecommander/releases/download/v0.1.6/filecommander_Windows_x86_64.zip
 
 # Extract the contents of the ZIP file
 Expand-Archive -Path filecommander_Windows_x86_64.zip -DestinationPath filecommander
@@ -17,10 +17,7 @@ Move-Item -Path filecommander\filecommander.exe -Destination C:\Windows\System32
 
 ```shell
 # Download the TAR.GZ file
-wget https://github.com/geoffrey1330/filecommander/releases/download/v0.1.1/filecommander_Linux_x86_64.tar.gz
-
-# Extract the contents of the TAR.GZ file
-tar -xvf filecommander_Linux_x86_64.tar.gz
+wget https://github.com/geoffrey1330/filecommander/releases/download/v0.1.6/filecommander_Linux_x86_64
 
 # Move the filecommander executable to a directory in PATH (e.g., /usr/local/bin)
 sudo mv filecommander/filecommander /usr/local/bin
@@ -32,10 +29,7 @@ sudo mv filecommander/filecommander /usr/local/bin
 
 ```shell
 # Download the TAR.GZ file
-curl -LOk https://github.com/geoffrey1330/filecommander/releases/download/v0.1.1/filecommander_Darwin_arm64.tar.gz
-
-# Extract the contents of the TAR.GZ file
-tar -xvf filecommander_Darwin_arm64.tar.gz
+wget https://github.com/geoffrey1330/filecommander/releases/download/v0.1.6/filecommander_Darwin_arm64
 
 # Move the filecommander executable to a directory in PATH (e.g., /usr/local/bin)
 sudo mv filecommander/filecommander /usr/local/bin
@@ -45,10 +39,7 @@ sudo mv filecommander/filecommander /usr/local/bin
 
 ```shell
 # Download the TAR.GZ file
-curl -LOk https://github.com/geoffrey1330/filecommander/releases/download/v0.1.1/filecommander_Darwin_x86_64.tar.gz
-
-# Extract the contents of the TAR.GZ file
-tar -xvf filecommander_Darwin_x86_64.tar.gz
+wget https://github.com/geoffrey1330/filecommander/releases/download/v0.1.6/filecommander_Darwin_x86_64
 
 # Move the filecommander executable to a directory in PATH (e.g., /usr/local/bin)
 sudo mv filecommander/filecommander /usr/local/bin
