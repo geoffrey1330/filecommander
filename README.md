@@ -88,3 +88,10 @@ OR
 ```shell
 filecommander search <directory> <filename extension>
 ```
+
+#### Open
+Open a file using your default editor.
+
+```shell
+filecommander open <filename>
+```
