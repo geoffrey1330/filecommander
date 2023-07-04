@@ -4,7 +4,7 @@ File Commander is a command-line tool for performing various file operations.
 
 ## Installation
 
-To install File Commander, follow these [Guide](https://github.com/geoffrey1330/filecommander/blob/main/Installation.md)
+To install File Commander, follow this [Guide](https://github.com/geoffrey1330/filecommander/blob/main/Installation.md)
 
 ## Getting Repo
 
