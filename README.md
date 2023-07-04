@@ -94,7 +94,7 @@ filecommander search <directory> <filename extension>
 ```
 
 #### Open
-Open a file using your default editor.
+Open a file in the default editor.
 
 ```shell
 filecommander open <filename>
