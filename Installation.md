@@ -16,11 +16,11 @@ Move-Item -Path filecommander\filecommander.exe -Destination C:\Windows\System32
 ## Linux:
 
 ```shell
-# Download the TAR.GZ file
-wget https://github.com/geoffrey1330/filecommander/releases/download/v0.1.6/filecommander_Linux_x86_64
+# Download the Binary file
+curl -LO https://github.com/geoffrey1330/filecommander/releases/download/v0.1.6/filecommander_Linux_x86_64
 
 # Move the filecommander executable to a directory in PATH (e.g., /usr/local/bin)
-sudo mv filecommander /usr/local/bin
+sudo install filecommander_Linux_x86_64 /usr/local/bin/filecommander
 ```
 
 ## macOS:
@@ -28,19 +28,19 @@ sudo mv filecommander /usr/local/bin
 #### For Apple Silicon (M1) Macs:
 
 ```shell
-# Download the TAR.GZ file
-wget https://github.com/geoffrey1330/filecommander/releases/download/v0.1.6/filecommander_Darwin_arm64
+# Download the Binary file
+curl -LO https://github.com/geoffrey1330/filecommander/releases/download/v0.1.6/filecommander_Darwin_arm64
 
 # Move the filecommander executable to a directory in PATH (e.g., /usr/local/bin)
-sudo mv filecommander /usr/local/bin
+sudo install filecommander_Darwin_arm64 /usr/local/bin/filecommander
 ```
 
 #### For Intel-based Macs:
 
 ```shell
-# Download the TAR.GZ file
-wget https://github.com/geoffrey1330/filecommander/releases/download/v0.1.6/filecommander_Darwin_x86_64
+# Download the Binary file
+curl -LO https://github.com/geoffrey1330/filecommander/releases/download/v0.1.6/filecommander_Darwin_x86_64
 
 # Move the filecommander executable to a directory in PATH (e.g., /usr/local/bin)
-sudo mv filecommander /usr/local/bin
+sudo install filecommander_Darwin_x86_64 /usr/local/bin/filecommander
 ```
