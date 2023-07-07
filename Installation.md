@@ -14,7 +14,7 @@ Expand-Archive -Path filecommander_Windows_x86_64.zip -DestinationPath filecomma
 Move-Item -Path filecommander\filecommander.exe -Destination C:\Windows\System32
 "@
 
-Start-Process powershell.exe -ArgumentList "-NoProfile", "-ExecutionPolicy Bypass", "-Command `"$code`"" -Verb RunAs
+Start-Process powershell.exe -ArgumentList "-NoProfile", "-ExecutionPolicy Bypass", "-Command $code" -Verb RunAs
 
 ```
 
