@@ -1,6 +1,6 @@
 # File Commander
 
-File Commander is a command-line tool for performing various file operations.
+File Commander is a command-line tool for performing various file operations such as `DELETE`, `COPY`, `MOVE`,`READ`, `SEARCH`, `LIST` with the terminal.
 
 ## Installation
 
@@ -16,13 +16,15 @@ follow these steps:
 # Check Go version
 go version
 ```
- or visit https://go.dev/ to install Go on your local machine.
+
+or visit https://go.dev/ to install Go on your local machine.
 
 2. Clone the repository or download the source code.
 
 ```shell
 git clone https://github.com/geoffrey1330/filecommander.git
 ```
+
 3. Navigate to the project directory.
 
 ```shell
@@ -34,18 +36,23 @@ cd filecommander
 ```shell
 go build -o filecommander main.go search.go utils.go
 ```
+
 This will generate an executable named filecommander.
 
 ## Usage
+
 File Commander supports the following commands:
 
 #### Create
+
 Create a new file.
 
 ```shell
 filecommander create <filename>
 ```
+
 #### Read
+
 Read the content of a file.
 
 ```shell
@@ -53,6 +60,7 @@ filecommander read <filename>
 ```
 
 #### Write
+
 Write content to a file.
 
 ```shell
@@ -60,24 +68,31 @@ filecommander write <filename> <content>
 ```
 
 #### Delete
+
 Delete a file.
 
 ```shell
 filecommander delete <filename>
 ```
+
 #### List
+
 List all files in a directory.
 
 ```shell
 filecommander list <directory>
 ```
+
 #### Copy
+
 Copy a file to a new destination.
 
 ```shell
 filecommander copy <srcfile> <destfile>
 ```
+
 #### Move
+
 Move a file to a new destination.
 
 ```shell
@@ -85,17 +100,21 @@ filecommander move <srcfile> <destfile>
 ```
 
 #### Search
+
 Search for files in a directory based on a given search term.
 
 ```shell
 filecommander search <directory> <filename>
 ```
-OR 
+
+OR
+
 ```shell
 filecommander search <directory> <filename extension>
 ```
 
 #### Open
+
 Open a file in the default editor.
 
 ```shell
