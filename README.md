@@ -16,6 +16,8 @@ follow these steps:
 # Check Go version
 go version
 ```
+OR visit https://go.dev/ to install Go on your loacl machine.
+
 2. Clone the repository or download the source code.
 
 ```shell
