@@ -3,14 +3,19 @@ To install the filecommander CLI tool to your system's PATH, you need to move th
 ## Windows(powershell):
 
 ```shell
+$code = @"
 # Download the ZIP file
-curl -LOk https://github.com/geoffrey1330/filecommander/releases/download/v0.1.6/filecommander_Windows_x86_64.zip
+Invoke-WebRequest -Uri 'https://github.com/geoffrey1330/filecommander/releases/download/v0.1.6/filecommander_Windows_x86_64.zip' -OutFile 'filecommander_Windows_x86_64.zip'
 
 # Extract the contents of the ZIP file
-Expand-Archive -Path filecommander_Windows_x86_64.zip -DestinationPath filecommander
+Expand-Archive -Path filecommander_Windows_x86_64.zip -DestinationPath filecommander -Force
 
 # Move the filecommander.exe executable to a directory in PATH (e.g., C:\Windows\System32)
 Move-Item -Path filecommander\filecommander.exe -Destination C:\Windows\System32
+"@
+
+Start-Process powershell.exe -ArgumentList "-NoProfile", "-ExecutionPolicy Bypass", "-Command $code" -Verb RunAs
+
 ```
 
 ## Linux:
