@@ -1,6 +1,6 @@
 # File Commander
 
-File Commander is a command-line tool for performing various file operations such as `DELTE`, `COPY`, `MOVE`,`READ`, `SEARCH`, `LIST` with the terminal.
+File Commander is a command-line tool for performing various file operations such as `DELETE`, `COPY`, `MOVE`,`READ`, `SEARCH`, `LIST` with the terminal.
 
 ## Installation
 
