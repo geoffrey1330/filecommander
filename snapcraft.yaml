@@ -1,0 +1,30 @@
+name: filecommander
+base: core22
+version: '1.0'
+summary: A command line utility framework for performing file operations
+description: |
+  File Commander is a command-line tool for performing various file operations, 
+  such as DELETE, COPY, MOVE, READ, SEARCH, LIST on the terminal
+confinement: strict
+
+apps:
+  filecommander:
+    command: filecommander
+    plugs:
+      - network
+      - home
+
+parts:
+  filecommander:
+    plugin: go
+    source: .
+    build-snaps: [go/latest/stable]
+
+    override-build: |
+      go build -o $CRAFT_PART_INSTALL/filecommander main.go search.go utils.go
+      craftctl default
+
+    stage-packages:
+      - libc6
+      - libstdc++6
+      
