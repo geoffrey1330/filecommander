@@ -4,7 +4,7 @@ version: '1.0'
 summary: A command line utility framework for performing file operations
 description: |
   File Commander is a command-line tool for performing various file operations, 
-  such as DELETE, COPY, MOVE,READ, SEARCH, LIST on the terminal
+  such as DELETE, COPY, MOVE, READ, SEARCH, LIST on the terminal
 confinement: strict
 
 apps:
