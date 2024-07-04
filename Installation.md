@@ -53,6 +53,6 @@ sudo install filecommander_Darwin_x86_64 /usr/local/bin/filecommander
 #### For Snap Users:
 
 ```shell
-# Simply run the below command. You can aswell use sudo to iniate the installation process If your system privileges requires you to use sudo
+# Simply run the below command. You can as well use sudo to initiate the installation process If your system privileges requires you to use sudo
 snap install filecommander
 ```
