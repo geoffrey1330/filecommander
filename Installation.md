@@ -49,3 +49,10 @@ curl -LO https://github.com/geoffrey1330/filecommander/releases/download/v0.1.6/
 # Move the filecommander executable to a directory in PATH (e.g., /usr/local/bin)
 sudo install filecommander_Darwin_x86_64 /usr/local/bin/filecommander
 ```
+
+#### For Snap Users:
+
+```shell
+# Simply run the below command. You can aswell use sudo to iniate the installation process If your system privileges requires you to use sudo
+snap install filecommander
+```

@@ -1,0 +1,41 @@
+name: Snapcraft
+
+on:
+  push:
+    tags:
+      - '*'
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: set up Snapcraft
+        run: sudo snap install snapcraft --classic
+
+      - name: set up LXD
+        run: |
+          sudo snap install lxd
+          sudo lxd init --auto
+          export SNAPCRAFT_BUILD_ENVIRONMENT=LXD
+
+      - name: Log in to Snapcraft
+        run: |
+          echo "${{ secrets.SNAPCRAFT_PASSWORD }}" | snapcraft login --with - <<EOF
+          ${{
+            echo "${{ secrets.SNAPCRAFT_EMAIL }}"
+            echo "${{ secrets.SNAPCRAFT_PASSWORD }}"
+          }}
+          EOF
+
+      - name: initiate snap build process
+        run: snapcraft
+
+      - name: publish filecommander package to ubuntu snapstore
+        run: snapcraft push filecommander_1.0_amd64.snap --release=stable
+
